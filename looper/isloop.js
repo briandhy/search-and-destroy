@@ -21,10 +21,14 @@ const LinkedList = require("./linkedlist");
 const isLoop = (linkedlist) => {
   let currentNode = linkedlist.head;
   const memory = {};
+  let i=0;
   while (currentNode) {
-    if (currentNode.value in memory) return true;
-    else memory[currentNode.value] = 1;
+    if (currentNode.value in memory) {
+      if(memeory[currentNode.value]===i)
+      return true;}
+    else memory[currentNode.value] = i;
     //console.log(memory);
+    i++
     currentNode = currentNode.next;
   }
   return false;
